@@ -1,24 +1,22 @@
-#define debug	//正在测试的模块
+//#define debug	//正在测试的模块
 //#undef debug		//已经完成的算法。使用方法：删除本行开始的“//”注释标志。
 
 using System;
 using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Data;
 using System.IO;
 using System.Text;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace Anter.Win32.JL.DSSaveTools
 {
-	/// <summary>
-	/// Form1 的摘要说明。
-	/// </summary>
-	/// 
+    /// <summary>
+    /// Form1 的摘要说明。
+    /// </summary>
+    /// 
 
-	public class frmMain : System.Windows.Forms.Form
+    public class frmMain : System.Windows.Forms.Form
 	{
 		#region 自动代码
 
@@ -112,506 +110,506 @@ namespace Anter.Win32.JL.DSSaveTools
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(frmMain));
-			this.grpFile = new System.Windows.Forms.GroupBox();
-			this.lblOutput = new System.Windows.Forms.Label();
-			this.lblInput = new System.Windows.Forms.Label();
-			this.btnChange = new System.Windows.Forms.Button();
-			this.btnInput = new System.Windows.Forms.Button();
-			this.txtOutput = new System.Windows.Forms.TextBox();
-			this.txtInput = new System.Windows.Forms.TextBox();
-			this.chkPokemon = new System.Windows.Forms.CheckBox();
-			this.grpTest = new System.Windows.Forms.GroupBox();
-			this.chkTest = new System.Windows.Forms.CheckBox();
-			this.lblTest128K = new System.Windows.Forms.Label();
-			this.lblTest8K = new System.Windows.Forms.Label();
-			this.lblTest64K = new System.Windows.Forms.Label();
-			this.lblTest1M = new System.Windows.Forms.Label();
-			this.lblTest512K = new System.Windows.Forms.Label();
-			this.lblTest256K = new System.Windows.Forms.Label();
-			this.lblTest512B = new System.Windows.Forms.Label();
-			this.lblTestEEPROM = new System.Windows.Forms.Label();
-			this.grpChangeMode = new System.Windows.Forms.GroupBox();
-			this.cboMode = new System.Windows.Forms.ComboBox();
-			this.grpLanguage = new System.Windows.Forms.GroupBox();
-			this.cboLanguage = new System.Windows.Forms.ComboBox();
-			this.grpOutput = new System.Windows.Forms.GroupBox();
-			this.lblOutputSize = new System.Windows.Forms.Label();
-			this.lblOutputFormat = new System.Windows.Forms.Label();
-			this.cboOutputSize = new System.Windows.Forms.ComboBox();
-			this.cboOutputFormat = new System.Windows.Forms.ComboBox();
-			this.grpControl = new System.Windows.Forms.GroupBox();
-			this.btnWii = new System.Windows.Forms.Button();
-			this.btnExit = new System.Windows.Forms.Button();
-			this.btnAbout = new System.Windows.Forms.Button();
-			this.grpM3 = new System.Windows.Forms.GroupBox();
-			this.txtM3ShortName = new System.Windows.Forms.TextBox();
-			this.lblM3ShortName = new System.Windows.Forms.Label();
-			this.txtM3LongName = new System.Windows.Forms.TextBox();
-			this.lblM3LongName = new System.Windows.Forms.Label();
-			this.btnM3Rom = new System.Windows.Forms.Button();
-			this.lblMessage = new System.Windows.Forms.Label();
-			this.grpMessage = new System.Windows.Forms.GroupBox();
-			this.dialogOpenSaveFile = new System.Windows.Forms.OpenFileDialog();
-			this.dialogOpenROM = new System.Windows.Forms.OpenFileDialog();
-			this.picName = new System.Windows.Forms.PictureBox();
-			this.groupChkBox = new System.Windows.Forms.GroupBox();
-			this.grpFile.SuspendLayout();
-			this.grpTest.SuspendLayout();
-			this.grpChangeMode.SuspendLayout();
-			this.grpLanguage.SuspendLayout();
-			this.grpOutput.SuspendLayout();
-			this.grpControl.SuspendLayout();
-			this.grpM3.SuspendLayout();
-			this.grpMessage.SuspendLayout();
-			this.groupChkBox.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// grpFile
-			// 
-			this.grpFile.Controls.Add(this.lblOutput);
-			this.grpFile.Controls.Add(this.lblInput);
-			this.grpFile.Controls.Add(this.btnChange);
-			this.grpFile.Controls.Add(this.btnInput);
-			this.grpFile.Controls.Add(this.txtOutput);
-			this.grpFile.Controls.Add(this.txtInput);
-			this.grpFile.Location = new System.Drawing.Point(12, 76);
-			this.grpFile.Name = "grpFile";
-			this.grpFile.Size = new System.Drawing.Size(504, 92);
-			this.grpFile.TabIndex = 0;
-			this.grpFile.TabStop = false;
-			// 
-			// lblOutput
-			// 
-			this.lblOutput.Location = new System.Drawing.Point(8, 56);
-			this.lblOutput.Name = "lblOutput";
-			this.lblOutput.Size = new System.Drawing.Size(56, 20);
-			this.lblOutput.TabIndex = 5;
-			this.lblOutput.Text = "目标文件";
-			this.lblOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblInput
-			// 
-			this.lblInput.Location = new System.Drawing.Point(8, 20);
-			this.lblInput.Name = "lblInput";
-			this.lblInput.Size = new System.Drawing.Size(56, 20);
-			this.lblInput.TabIndex = 4;
-			this.lblInput.Text = "源文件";
-			this.lblInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// btnChange
-			// 
-			this.btnChange.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnChange.Location = new System.Drawing.Point(444, 55);
-			this.btnChange.Name = "btnChange";
-			this.btnChange.Size = new System.Drawing.Size(48, 24);
-			this.btnChange.TabIndex = 3;
-			this.btnChange.Text = "转换";
-			this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
-			// 
-			// btnInput
-			// 
-			this.btnInput.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnInput.Location = new System.Drawing.Point(444, 20);
-			this.btnInput.Name = "btnInput";
-			this.btnInput.Size = new System.Drawing.Size(48, 24);
-			this.btnInput.TabIndex = 2;
-			this.btnInput.Text = "打开";
-			this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
-			// 
-			// txtOutput
-			// 
-			this.txtOutput.Location = new System.Drawing.Point(64, 56);
-			this.txtOutput.Name = "txtOutput";
-			this.txtOutput.Size = new System.Drawing.Size(372, 21);
-			this.txtOutput.TabIndex = 1;
-			this.txtOutput.Text = "";
-			this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
-			// 
-			// txtInput
-			// 
-			this.txtInput.Location = new System.Drawing.Point(64, 20);
-			this.txtInput.Name = "txtInput";
-			this.txtInput.Size = new System.Drawing.Size(372, 21);
-			this.txtInput.TabIndex = 0;
-			this.txtInput.Text = "";
-			this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
-			// 
-			// chkPokemon
-			// 
-			this.chkPokemon.Location = new System.Drawing.Point(16, 16);
-			this.chkPokemon.Name = "chkPokemon";
-			this.chkPokemon.Size = new System.Drawing.Size(224, 20);
-			this.chkPokemon.TabIndex = 6;
-			this.chkPokemon.Text = "口袋妖怪强制转换（512K -> 256K）";
-			this.chkPokemon.CheckedChanged += new System.EventHandler(this.chkPokemon_CheckedChanged);
-			// 
-			// grpTest
-			// 
-			this.grpTest.Controls.Add(this.chkTest);
-			this.grpTest.Controls.Add(this.lblTest128K);
-			this.grpTest.Controls.Add(this.lblTest8K);
-			this.grpTest.Controls.Add(this.lblTest64K);
-			this.grpTest.Controls.Add(this.lblTest1M);
-			this.grpTest.Controls.Add(this.lblTest512K);
-			this.grpTest.Controls.Add(this.lblTest256K);
-			this.grpTest.Controls.Add(this.lblTest512B);
-			this.grpTest.Controls.Add(this.lblTestEEPROM);
-			this.grpTest.Location = new System.Drawing.Point(12, 172);
-			this.grpTest.Name = "grpTest";
-			this.grpTest.Size = new System.Drawing.Size(504, 40);
-			this.grpTest.TabIndex = 1;
-			this.grpTest.TabStop = false;
-			// 
-			// chkTest
-			// 
-			this.chkTest.Location = new System.Drawing.Point(13, 14);
-			this.chkTest.Name = "chkTest";
-			this.chkTest.Size = new System.Drawing.Size(60, 20);
-			this.chkTest.TabIndex = 14;
-			this.chkTest.Text = "测试";
-			this.chkTest.CheckedChanged += new System.EventHandler(this.chkTest_CheckedChanged);
-			// 
-			// lblTest128K
-			// 
-			this.lblTest128K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblTest128K.Location = new System.Drawing.Point(232, 16);
-			this.lblTest128K.Name = "lblTest128K";
-			this.lblTest128K.Size = new System.Drawing.Size(50, 16);
-			this.lblTest128K.TabIndex = 9;
-			this.lblTest128K.Text = "128K";
-			this.lblTest128K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblTest8K
-			// 
-			this.lblTest8K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblTest8K.Location = new System.Drawing.Point(128, 16);
-			this.lblTest8K.Name = "lblTest8K";
-			this.lblTest8K.Size = new System.Drawing.Size(50, 16);
-			this.lblTest8K.TabIndex = 11;
-			this.lblTest8K.Text = "8K";
-			this.lblTest8K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblTest64K
-			// 
-			this.lblTest64K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblTest64K.Location = new System.Drawing.Point(180, 16);
-			this.lblTest64K.Name = "lblTest64K";
-			this.lblTest64K.Size = new System.Drawing.Size(50, 16);
-			this.lblTest64K.TabIndex = 10;
-			this.lblTest64K.Text = "64K";
-			this.lblTest64K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblTest1M
-			// 
-			this.lblTest1M.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblTest1M.Location = new System.Drawing.Point(388, 16);
-			this.lblTest1M.Name = "lblTest1M";
-			this.lblTest1M.Size = new System.Drawing.Size(50, 16);
-			this.lblTest1M.TabIndex = 13;
-			this.lblTest1M.Text = "1M";
-			this.lblTest1M.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblTest512K
-			// 
-			this.lblTest512K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblTest512K.Location = new System.Drawing.Point(336, 16);
-			this.lblTest512K.Name = "lblTest512K";
-			this.lblTest512K.Size = new System.Drawing.Size(50, 16);
-			this.lblTest512K.TabIndex = 7;
-			this.lblTest512K.Text = "512K";
-			this.lblTest512K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblTest256K
-			// 
-			this.lblTest256K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblTest256K.Location = new System.Drawing.Point(284, 16);
-			this.lblTest256K.Name = "lblTest256K";
-			this.lblTest256K.Size = new System.Drawing.Size(50, 16);
-			this.lblTest256K.TabIndex = 8;
-			this.lblTest256K.Text = "256K";
-			this.lblTest256K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblTest512B
-			// 
-			this.lblTest512B.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblTest512B.Location = new System.Drawing.Point(76, 16);
-			this.lblTest512B.Name = "lblTest512B";
-			this.lblTest512B.Size = new System.Drawing.Size(50, 16);
-			this.lblTest512B.TabIndex = 6;
-			this.lblTest512B.Text = "512B";
-			this.lblTest512B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblTestEEPROM
-			// 
-			this.lblTestEEPROM.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblTestEEPROM.Location = new System.Drawing.Point(444, 16);
-			this.lblTestEEPROM.Name = "lblTestEEPROM";
-			this.lblTestEEPROM.Size = new System.Drawing.Size(50, 16);
-			this.lblTestEEPROM.TabIndex = 12;
-			this.lblTestEEPROM.Text = "EEPROM";
-			this.lblTestEEPROM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// grpChangeMode
-			// 
-			this.grpChangeMode.Controls.Add(this.cboMode);
-			this.grpChangeMode.Location = new System.Drawing.Point(336, 16);
-			this.grpChangeMode.Name = "grpChangeMode";
-			this.grpChangeMode.Size = new System.Drawing.Size(72, 56);
-			this.grpChangeMode.TabIndex = 2;
-			this.grpChangeMode.TabStop = false;
-			this.grpChangeMode.Text = "转换模式";
-			// 
-			// cboMode
-			// 
-			this.cboMode.BackColor = System.Drawing.SystemColors.Window;
-			this.cboMode.Location = new System.Drawing.Point(8, 24);
-			this.cboMode.Name = "cboMode";
-			this.cboMode.Size = new System.Drawing.Size(56, 20);
-			this.cboMode.TabIndex = 0;
-			this.cboMode.SelectedIndexChanged += new System.EventHandler(this.cboMode_SelectedIndexChanged);
-			// 
-			// grpLanguage
-			// 
-			this.grpLanguage.Controls.Add(this.cboLanguage);
-			this.grpLanguage.Location = new System.Drawing.Point(412, 16);
-			this.grpLanguage.Name = "grpLanguage";
-			this.grpLanguage.Size = new System.Drawing.Size(104, 56);
-			this.grpLanguage.TabIndex = 3;
-			this.grpLanguage.TabStop = false;
-			this.grpLanguage.Text = "Language";
-			// 
-			// cboLanguage
-			// 
-			this.cboLanguage.BackColor = System.Drawing.SystemColors.Window;
-			this.cboLanguage.Location = new System.Drawing.Point(8, 24);
-			this.cboLanguage.Name = "cboLanguage";
-			this.cboLanguage.Size = new System.Drawing.Size(88, 20);
-			this.cboLanguage.TabIndex = 0;
-			this.cboLanguage.SelectedIndexChanged += new System.EventHandler(this.cboLanguage_SelectedIndexChanged);
-			// 
-			// grpOutput
-			// 
-			this.grpOutput.Controls.Add(this.lblOutputSize);
-			this.grpOutput.Controls.Add(this.lblOutputFormat);
-			this.grpOutput.Controls.Add(this.cboOutputSize);
-			this.grpOutput.Controls.Add(this.cboOutputFormat);
-			this.grpOutput.Location = new System.Drawing.Point(12, 216);
-			this.grpOutput.Name = "grpOutput";
-			this.grpOutput.Size = new System.Drawing.Size(316, 96);
-			this.grpOutput.TabIndex = 4;
-			this.grpOutput.TabStop = false;
-			this.grpOutput.Text = "输出格式";
-			// 
-			// lblOutputSize
-			// 
-			this.lblOutputSize.Location = new System.Drawing.Point(16, 60);
-			this.lblOutputSize.Name = "lblOutputSize";
-			this.lblOutputSize.Size = new System.Drawing.Size(60, 20);
-			this.lblOutputSize.TabIndex = 3;
-			this.lblOutputSize.Text = "输出大小";
-			this.lblOutputSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblOutputFormat
-			// 
-			this.lblOutputFormat.Location = new System.Drawing.Point(16, 28);
-			this.lblOutputFormat.Name = "lblOutputFormat";
-			this.lblOutputFormat.Size = new System.Drawing.Size(60, 20);
-			this.lblOutputFormat.TabIndex = 2;
-			this.lblOutputFormat.Text = "输出格式";
-			this.lblOutputFormat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// cboOutputSize
-			// 
-			this.cboOutputSize.Location = new System.Drawing.Point(100, 60);
-			this.cboOutputSize.Name = "cboOutputSize";
-			this.cboOutputSize.Size = new System.Drawing.Size(196, 20);
-			this.cboOutputSize.TabIndex = 1;
-			// 
-			// cboOutputFormat
-			// 
-			this.cboOutputFormat.Location = new System.Drawing.Point(100, 28);
-			this.cboOutputFormat.Name = "cboOutputFormat";
-			this.cboOutputFormat.Size = new System.Drawing.Size(196, 20);
-			this.cboOutputFormat.TabIndex = 0;
-			this.cboOutputFormat.SelectedIndexChanged += new System.EventHandler(this.cboOutputFormat_SelectedIndexChanged);
-			// 
-			// grpControl
-			// 
-			this.grpControl.Controls.Add(this.btnWii);
-			this.grpControl.Controls.Add(this.btnExit);
-			this.grpControl.Controls.Add(this.btnAbout);
-			this.grpControl.Location = new System.Drawing.Point(288, 408);
-			this.grpControl.Name = "grpControl";
-			this.grpControl.Size = new System.Drawing.Size(228, 48);
-			this.grpControl.TabIndex = 6;
-			this.grpControl.TabStop = false;
-			// 
-			// btnWii
-			// 
-			this.btnWii.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnWii.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnWii.Location = new System.Drawing.Point(12, 16);
-			this.btnWii.Name = "btnWii";
-			this.btnWii.Size = new System.Drawing.Size(60, 24);
-			this.btnWii.TabIndex = 2;
-			this.btnWii.Text = "WII";
-			this.btnWii.Click += new System.EventHandler(this.btnWii_Click);
-			// 
-			// btnExit
-			// 
-			this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnExit.Location = new System.Drawing.Point(156, 16);
-			this.btnExit.Name = "btnExit";
-			this.btnExit.Size = new System.Drawing.Size(60, 24);
-			this.btnExit.TabIndex = 1;
-			this.btnExit.Text = "退出";
-			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-			// 
-			// btnAbout
-			// 
-			this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAbout.Location = new System.Drawing.Point(84, 16);
-			this.btnAbout.Name = "btnAbout";
-			this.btnAbout.Size = new System.Drawing.Size(60, 24);
-			this.btnAbout.TabIndex = 0;
-			this.btnAbout.Text = "关于";
-			this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
-			// 
-			// grpM3
-			// 
-			this.grpM3.Controls.Add(this.txtM3ShortName);
-			this.grpM3.Controls.Add(this.lblM3ShortName);
-			this.grpM3.Controls.Add(this.txtM3LongName);
-			this.grpM3.Controls.Add(this.lblM3LongName);
-			this.grpM3.Controls.Add(this.btnM3Rom);
-			this.grpM3.Enabled = false;
-			this.grpM3.Location = new System.Drawing.Point(12, 320);
-			this.grpM3.Name = "grpM3";
-			this.grpM3.Size = new System.Drawing.Size(316, 88);
-			this.grpM3.TabIndex = 7;
-			this.grpM3.TabStop = false;
-			this.grpM3.Text = "M3 附加选项";
-			// 
-			// txtM3ShortName
-			// 
-			this.txtM3ShortName.Location = new System.Drawing.Point(80, 20);
-			this.txtM3ShortName.Name = "txtM3ShortName";
-			this.txtM3ShortName.ReadOnly = true;
-			this.txtM3ShortName.Size = new System.Drawing.Size(120, 21);
-			this.txtM3ShortName.TabIndex = 11;
-			this.txtM3ShortName.Text = "";
-			// 
-			// lblM3ShortName
-			// 
-			this.lblM3ShortName.Location = new System.Drawing.Point(8, 20);
-			this.lblM3ShortName.Name = "lblM3ShortName";
-			this.lblM3ShortName.Size = new System.Drawing.Size(68, 24);
-			this.lblM3ShortName.TabIndex = 9;
-			this.lblM3ShortName.Text = "短文件名";
-			this.lblM3ShortName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// txtM3LongName
-			// 
-			this.txtM3LongName.Location = new System.Drawing.Point(80, 56);
-			this.txtM3LongName.Name = "txtM3LongName";
-			this.txtM3LongName.ReadOnly = true;
-			this.txtM3LongName.Size = new System.Drawing.Size(224, 21);
-			this.txtM3LongName.TabIndex = 12;
-			this.txtM3LongName.Text = "";
-			// 
-			// lblM3LongName
-			// 
-			this.lblM3LongName.Location = new System.Drawing.Point(8, 56);
-			this.lblM3LongName.Name = "lblM3LongName";
-			this.lblM3LongName.Size = new System.Drawing.Size(68, 24);
-			this.lblM3LongName.TabIndex = 10;
-			this.lblM3LongName.Text = "长文件名";
-			this.lblM3LongName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// btnM3Rom
-			// 
-			this.btnM3Rom.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnM3Rom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnM3Rom.Location = new System.Drawing.Point(204, 20);
-			this.btnM3Rom.Name = "btnM3Rom";
-			this.btnM3Rom.Size = new System.Drawing.Size(100, 24);
-			this.btnM3Rom.TabIndex = 6;
-			this.btnM3Rom.Text = "对应M3 ROM文件";
-			this.btnM3Rom.Click += new System.EventHandler(this.btnM3Rom_Click);
-			// 
-			// lblMessage
-			// 
-			this.lblMessage.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lblMessage.Location = new System.Drawing.Point(3, 17);
-			this.lblMessage.Name = "lblMessage";
-			this.lblMessage.Size = new System.Drawing.Size(178, 172);
-			this.lblMessage.TabIndex = 8;
-			this.lblMessage.Text = "正在写入，请稍等……";
-			// 
-			// grpMessage
-			// 
-			this.grpMessage.Controls.Add(this.lblMessage);
-			this.grpMessage.Location = new System.Drawing.Point(332, 216);
-			this.grpMessage.Name = "grpMessage";
-			this.grpMessage.Size = new System.Drawing.Size(184, 192);
-			this.grpMessage.TabIndex = 8;
-			this.grpMessage.TabStop = false;
-			// 
-			// picName
-			// 
-			this.picName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picName.BackgroundImage")));
-			this.picName.Location = new System.Drawing.Point(12, 16);
-			this.picName.Name = "picName";
-			this.picName.Size = new System.Drawing.Size(316, 56);
-			this.picName.TabIndex = 9;
-			this.picName.TabStop = false;
-			// 
-			// groupChkBox
-			// 
-			this.groupChkBox.Controls.Add(this.chkPokemon);
-			this.groupChkBox.Location = new System.Drawing.Point(12, 408);
-			this.groupChkBox.Name = "groupChkBox";
-			this.groupChkBox.Size = new System.Drawing.Size(268, 48);
-			this.groupChkBox.TabIndex = 7;
-			this.groupChkBox.TabStop = false;
-			// 
-			// frmMain
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
-			this.ClientSize = new System.Drawing.Size(528, 466);
-			this.Controls.Add(this.grpMessage);
-			this.Controls.Add(this.grpM3);
-			this.Controls.Add(this.grpControl);
-			this.Controls.Add(this.grpOutput);
-			this.Controls.Add(this.grpChangeMode);
-			this.Controls.Add(this.grpTest);
-			this.Controls.Add(this.grpFile);
-			this.Controls.Add(this.grpLanguage);
-			this.Controls.Add(this.picName);
-			this.Controls.Add(this.groupChkBox);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(536, 500);
-			this.MinimumSize = new System.Drawing.Size(536, 500);
-			this.Name = "frmMain";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "DS Save Tools";
-			this.Load += new System.EventHandler(this.frmMain_Load);
-			this.grpFile.ResumeLayout(false);
-			this.grpTest.ResumeLayout(false);
-			this.grpChangeMode.ResumeLayout(false);
-			this.grpLanguage.ResumeLayout(false);
-			this.grpOutput.ResumeLayout(false);
-			this.grpControl.ResumeLayout(false);
-			this.grpM3.ResumeLayout(false);
-			this.grpMessage.ResumeLayout(false);
-			this.groupChkBox.ResumeLayout(false);
-			this.ResumeLayout(false);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.grpFile = new System.Windows.Forms.GroupBox();
+            this.lblOutput = new System.Windows.Forms.Label();
+            this.lblInput = new System.Windows.Forms.Label();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnInput = new System.Windows.Forms.Button();
+            this.txtOutput = new System.Windows.Forms.TextBox();
+            this.txtInput = new System.Windows.Forms.TextBox();
+            this.chkPokemon = new System.Windows.Forms.CheckBox();
+            this.grpTest = new System.Windows.Forms.GroupBox();
+            this.chkTest = new System.Windows.Forms.CheckBox();
+            this.lblTest128K = new System.Windows.Forms.Label();
+            this.lblTest8K = new System.Windows.Forms.Label();
+            this.lblTest64K = new System.Windows.Forms.Label();
+            this.lblTest1M = new System.Windows.Forms.Label();
+            this.lblTest512K = new System.Windows.Forms.Label();
+            this.lblTest256K = new System.Windows.Forms.Label();
+            this.lblTest512B = new System.Windows.Forms.Label();
+            this.lblTestEEPROM = new System.Windows.Forms.Label();
+            this.grpChangeMode = new System.Windows.Forms.GroupBox();
+            this.cboMode = new System.Windows.Forms.ComboBox();
+            this.grpLanguage = new System.Windows.Forms.GroupBox();
+            this.cboLanguage = new System.Windows.Forms.ComboBox();
+            this.grpOutput = new System.Windows.Forms.GroupBox();
+            this.lblOutputSize = new System.Windows.Forms.Label();
+            this.lblOutputFormat = new System.Windows.Forms.Label();
+            this.cboOutputSize = new System.Windows.Forms.ComboBox();
+            this.cboOutputFormat = new System.Windows.Forms.ComboBox();
+            this.grpControl = new System.Windows.Forms.GroupBox();
+            this.btnWii = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
+            this.grpM3 = new System.Windows.Forms.GroupBox();
+            this.txtM3ShortName = new System.Windows.Forms.TextBox();
+            this.lblM3ShortName = new System.Windows.Forms.Label();
+            this.txtM3LongName = new System.Windows.Forms.TextBox();
+            this.lblM3LongName = new System.Windows.Forms.Label();
+            this.btnM3Rom = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.grpMessage = new System.Windows.Forms.GroupBox();
+            this.dialogOpenSaveFile = new System.Windows.Forms.OpenFileDialog();
+            this.dialogOpenROM = new System.Windows.Forms.OpenFileDialog();
+            this.picName = new System.Windows.Forms.PictureBox();
+            this.groupChkBox = new System.Windows.Forms.GroupBox();
+            this.grpFile.SuspendLayout();
+            this.grpTest.SuspendLayout();
+            this.grpChangeMode.SuspendLayout();
+            this.grpLanguage.SuspendLayout();
+            this.grpOutput.SuspendLayout();
+            this.grpControl.SuspendLayout();
+            this.grpM3.SuspendLayout();
+            this.grpMessage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picName)).BeginInit();
+            this.groupChkBox.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // grpFile
+            // 
+            this.grpFile.Controls.Add(this.lblOutput);
+            this.grpFile.Controls.Add(this.lblInput);
+            this.grpFile.Controls.Add(this.btnChange);
+            this.grpFile.Controls.Add(this.btnInput);
+            this.grpFile.Controls.Add(this.txtOutput);
+            this.grpFile.Controls.Add(this.txtInput);
+            this.grpFile.Location = new System.Drawing.Point(12, 76);
+            this.grpFile.Name = "grpFile";
+            this.grpFile.Size = new System.Drawing.Size(504, 92);
+            this.grpFile.TabIndex = 0;
+            this.grpFile.TabStop = false;
+            // 
+            // lblOutput
+            // 
+            this.lblOutput.Location = new System.Drawing.Point(8, 56);
+            this.lblOutput.Name = "lblOutput";
+            this.lblOutput.Size = new System.Drawing.Size(56, 20);
+            this.lblOutput.TabIndex = 5;
+            this.lblOutput.Text = "目标文件";
+            this.lblOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblInput
+            // 
+            this.lblInput.Location = new System.Drawing.Point(8, 20);
+            this.lblInput.Name = "lblInput";
+            this.lblInput.Size = new System.Drawing.Size(56, 20);
+            this.lblInput.TabIndex = 4;
+            this.lblInput.Text = "源文件";
+            this.lblInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnChange
+            // 
+            this.btnChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Location = new System.Drawing.Point(444, 55);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(48, 24);
+            this.btnChange.TabIndex = 3;
+            this.btnChange.Text = "转换";
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // btnInput
+            // 
+            this.btnInput.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInput.Location = new System.Drawing.Point(444, 20);
+            this.btnInput.Name = "btnInput";
+            this.btnInput.Size = new System.Drawing.Size(48, 24);
+            this.btnInput.TabIndex = 2;
+            this.btnInput.Text = "打开";
+            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
+            // 
+            // txtOutput
+            // 
+            this.txtOutput.Location = new System.Drawing.Point(64, 56);
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.Size = new System.Drawing.Size(372, 21);
+            this.txtOutput.TabIndex = 1;
+            this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
+            // 
+            // txtInput
+            // 
+            this.txtInput.Location = new System.Drawing.Point(64, 20);
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(372, 21);
+            this.txtInput.TabIndex = 0;
+            this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
+            // 
+            // chkPokemon
+            // 
+            this.chkPokemon.Location = new System.Drawing.Point(16, 16);
+            this.chkPokemon.Name = "chkPokemon";
+            this.chkPokemon.Size = new System.Drawing.Size(224, 20);
+            this.chkPokemon.TabIndex = 6;
+            this.chkPokemon.Text = "口袋妖怪强制转换（512K -> 256K）";
+            this.chkPokemon.CheckedChanged += new System.EventHandler(this.chkPokemon_CheckedChanged);
+            // 
+            // grpTest
+            // 
+            this.grpTest.Controls.Add(this.chkTest);
+            this.grpTest.Controls.Add(this.lblTest128K);
+            this.grpTest.Controls.Add(this.lblTest8K);
+            this.grpTest.Controls.Add(this.lblTest64K);
+            this.grpTest.Controls.Add(this.lblTest1M);
+            this.grpTest.Controls.Add(this.lblTest512K);
+            this.grpTest.Controls.Add(this.lblTest256K);
+            this.grpTest.Controls.Add(this.lblTest512B);
+            this.grpTest.Controls.Add(this.lblTestEEPROM);
+            this.grpTest.Location = new System.Drawing.Point(12, 172);
+            this.grpTest.Name = "grpTest";
+            this.grpTest.Size = new System.Drawing.Size(504, 40);
+            this.grpTest.TabIndex = 1;
+            this.grpTest.TabStop = false;
+            // 
+            // chkTest
+            // 
+            this.chkTest.Location = new System.Drawing.Point(13, 14);
+            this.chkTest.Name = "chkTest";
+            this.chkTest.Size = new System.Drawing.Size(60, 20);
+            this.chkTest.TabIndex = 14;
+            this.chkTest.Text = "测试";
+            this.chkTest.CheckedChanged += new System.EventHandler(this.chkTest_CheckedChanged);
+            // 
+            // lblTest128K
+            // 
+            this.lblTest128K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTest128K.Location = new System.Drawing.Point(232, 16);
+            this.lblTest128K.Name = "lblTest128K";
+            this.lblTest128K.Size = new System.Drawing.Size(50, 16);
+            this.lblTest128K.TabIndex = 9;
+            this.lblTest128K.Text = "128K";
+            this.lblTest128K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTest8K
+            // 
+            this.lblTest8K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTest8K.Location = new System.Drawing.Point(128, 16);
+            this.lblTest8K.Name = "lblTest8K";
+            this.lblTest8K.Size = new System.Drawing.Size(50, 16);
+            this.lblTest8K.TabIndex = 11;
+            this.lblTest8K.Text = "8K";
+            this.lblTest8K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTest64K
+            // 
+            this.lblTest64K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTest64K.Location = new System.Drawing.Point(180, 16);
+            this.lblTest64K.Name = "lblTest64K";
+            this.lblTest64K.Size = new System.Drawing.Size(50, 16);
+            this.lblTest64K.TabIndex = 10;
+            this.lblTest64K.Text = "64K";
+            this.lblTest64K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTest1M
+            // 
+            this.lblTest1M.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTest1M.Location = new System.Drawing.Point(388, 16);
+            this.lblTest1M.Name = "lblTest1M";
+            this.lblTest1M.Size = new System.Drawing.Size(50, 16);
+            this.lblTest1M.TabIndex = 13;
+            this.lblTest1M.Text = "1M";
+            this.lblTest1M.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTest512K
+            // 
+            this.lblTest512K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTest512K.Location = new System.Drawing.Point(336, 16);
+            this.lblTest512K.Name = "lblTest512K";
+            this.lblTest512K.Size = new System.Drawing.Size(50, 16);
+            this.lblTest512K.TabIndex = 7;
+            this.lblTest512K.Text = "512K";
+            this.lblTest512K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTest256K
+            // 
+            this.lblTest256K.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTest256K.Location = new System.Drawing.Point(284, 16);
+            this.lblTest256K.Name = "lblTest256K";
+            this.lblTest256K.Size = new System.Drawing.Size(50, 16);
+            this.lblTest256K.TabIndex = 8;
+            this.lblTest256K.Text = "256K";
+            this.lblTest256K.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTest512B
+            // 
+            this.lblTest512B.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTest512B.Location = new System.Drawing.Point(76, 16);
+            this.lblTest512B.Name = "lblTest512B";
+            this.lblTest512B.Size = new System.Drawing.Size(50, 16);
+            this.lblTest512B.TabIndex = 6;
+            this.lblTest512B.Text = "512B";
+            this.lblTest512B.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTestEEPROM
+            // 
+            this.lblTestEEPROM.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTestEEPROM.Location = new System.Drawing.Point(444, 16);
+            this.lblTestEEPROM.Name = "lblTestEEPROM";
+            this.lblTestEEPROM.Size = new System.Drawing.Size(50, 16);
+            this.lblTestEEPROM.TabIndex = 12;
+            this.lblTestEEPROM.Text = "EEPROM";
+            this.lblTestEEPROM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // grpChangeMode
+            // 
+            this.grpChangeMode.Controls.Add(this.cboMode);
+            this.grpChangeMode.Location = new System.Drawing.Point(336, 16);
+            this.grpChangeMode.Name = "grpChangeMode";
+            this.grpChangeMode.Size = new System.Drawing.Size(72, 56);
+            this.grpChangeMode.TabIndex = 2;
+            this.grpChangeMode.TabStop = false;
+            this.grpChangeMode.Text = "转换模式";
+            // 
+            // cboMode
+            // 
+            this.cboMode.BackColor = System.Drawing.SystemColors.Window;
+            this.cboMode.Location = new System.Drawing.Point(8, 24);
+            this.cboMode.Name = "cboMode";
+            this.cboMode.Size = new System.Drawing.Size(56, 20);
+            this.cboMode.TabIndex = 0;
+            this.cboMode.SelectedIndexChanged += new System.EventHandler(this.cboMode_SelectedIndexChanged);
+            // 
+            // grpLanguage
+            // 
+            this.grpLanguage.Controls.Add(this.cboLanguage);
+            this.grpLanguage.Location = new System.Drawing.Point(412, 16);
+            this.grpLanguage.Name = "grpLanguage";
+            this.grpLanguage.Size = new System.Drawing.Size(104, 56);
+            this.grpLanguage.TabIndex = 3;
+            this.grpLanguage.TabStop = false;
+            this.grpLanguage.Text = "Language";
+            // 
+            // cboLanguage
+            // 
+            this.cboLanguage.BackColor = System.Drawing.SystemColors.Window;
+            this.cboLanguage.Location = new System.Drawing.Point(8, 24);
+            this.cboLanguage.Name = "cboLanguage";
+            this.cboLanguage.Size = new System.Drawing.Size(88, 20);
+            this.cboLanguage.TabIndex = 0;
+            this.cboLanguage.SelectedIndexChanged += new System.EventHandler(this.cboLanguage_SelectedIndexChanged);
+            // 
+            // grpOutput
+            // 
+            this.grpOutput.Controls.Add(this.lblOutputSize);
+            this.grpOutput.Controls.Add(this.lblOutputFormat);
+            this.grpOutput.Controls.Add(this.cboOutputSize);
+            this.grpOutput.Controls.Add(this.cboOutputFormat);
+            this.grpOutput.Location = new System.Drawing.Point(12, 216);
+            this.grpOutput.Name = "grpOutput";
+            this.grpOutput.Size = new System.Drawing.Size(316, 96);
+            this.grpOutput.TabIndex = 4;
+            this.grpOutput.TabStop = false;
+            this.grpOutput.Text = "输出格式";
+            // 
+            // lblOutputSize
+            // 
+            this.lblOutputSize.Location = new System.Drawing.Point(16, 60);
+            this.lblOutputSize.Name = "lblOutputSize";
+            this.lblOutputSize.Size = new System.Drawing.Size(60, 20);
+            this.lblOutputSize.TabIndex = 3;
+            this.lblOutputSize.Text = "输出大小";
+            this.lblOutputSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblOutputFormat
+            // 
+            this.lblOutputFormat.Location = new System.Drawing.Point(16, 28);
+            this.lblOutputFormat.Name = "lblOutputFormat";
+            this.lblOutputFormat.Size = new System.Drawing.Size(60, 20);
+            this.lblOutputFormat.TabIndex = 2;
+            this.lblOutputFormat.Text = "输出格式";
+            this.lblOutputFormat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cboOutputSize
+            // 
+            this.cboOutputSize.Location = new System.Drawing.Point(100, 60);
+            this.cboOutputSize.Name = "cboOutputSize";
+            this.cboOutputSize.Size = new System.Drawing.Size(196, 20);
+            this.cboOutputSize.TabIndex = 1;
+            // 
+            // cboOutputFormat
+            // 
+            this.cboOutputFormat.Location = new System.Drawing.Point(100, 28);
+            this.cboOutputFormat.Name = "cboOutputFormat";
+            this.cboOutputFormat.Size = new System.Drawing.Size(196, 20);
+            this.cboOutputFormat.TabIndex = 0;
+            this.cboOutputFormat.SelectedIndexChanged += new System.EventHandler(this.cboOutputFormat_SelectedIndexChanged);
+            // 
+            // grpControl
+            // 
+            this.grpControl.Controls.Add(this.btnWii);
+            this.grpControl.Controls.Add(this.btnExit);
+            this.grpControl.Controls.Add(this.btnAbout);
+            this.grpControl.Location = new System.Drawing.Point(288, 408);
+            this.grpControl.Name = "grpControl";
+            this.grpControl.Size = new System.Drawing.Size(228, 48);
+            this.grpControl.TabIndex = 6;
+            this.grpControl.TabStop = false;
+            // 
+            // btnWii
+            // 
+            this.btnWii.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWii.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWii.Location = new System.Drawing.Point(12, 16);
+            this.btnWii.Name = "btnWii";
+            this.btnWii.Size = new System.Drawing.Size(60, 24);
+            this.btnWii.TabIndex = 2;
+            this.btnWii.Text = "WII";
+            this.btnWii.Click += new System.EventHandler(this.btnWii_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Location = new System.Drawing.Point(156, 16);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(60, 24);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "退出";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Location = new System.Drawing.Point(84, 16);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(60, 24);
+            this.btnAbout.TabIndex = 0;
+            this.btnAbout.Text = "关于";
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // grpM3
+            // 
+            this.grpM3.Controls.Add(this.txtM3ShortName);
+            this.grpM3.Controls.Add(this.lblM3ShortName);
+            this.grpM3.Controls.Add(this.txtM3LongName);
+            this.grpM3.Controls.Add(this.lblM3LongName);
+            this.grpM3.Controls.Add(this.btnM3Rom);
+            this.grpM3.Enabled = false;
+            this.grpM3.Location = new System.Drawing.Point(12, 320);
+            this.grpM3.Name = "grpM3";
+            this.grpM3.Size = new System.Drawing.Size(316, 88);
+            this.grpM3.TabIndex = 7;
+            this.grpM3.TabStop = false;
+            this.grpM3.Text = "M3 附加选项";
+            // 
+            // txtM3ShortName
+            // 
+            this.txtM3ShortName.Location = new System.Drawing.Point(80, 20);
+            this.txtM3ShortName.Name = "txtM3ShortName";
+            this.txtM3ShortName.ReadOnly = true;
+            this.txtM3ShortName.Size = new System.Drawing.Size(120, 21);
+            this.txtM3ShortName.TabIndex = 11;
+            // 
+            // lblM3ShortName
+            // 
+            this.lblM3ShortName.Location = new System.Drawing.Point(8, 20);
+            this.lblM3ShortName.Name = "lblM3ShortName";
+            this.lblM3ShortName.Size = new System.Drawing.Size(68, 24);
+            this.lblM3ShortName.TabIndex = 9;
+            this.lblM3ShortName.Text = "短文件名";
+            this.lblM3ShortName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtM3LongName
+            // 
+            this.txtM3LongName.Location = new System.Drawing.Point(80, 56);
+            this.txtM3LongName.Name = "txtM3LongName";
+            this.txtM3LongName.ReadOnly = true;
+            this.txtM3LongName.Size = new System.Drawing.Size(224, 21);
+            this.txtM3LongName.TabIndex = 12;
+            // 
+            // lblM3LongName
+            // 
+            this.lblM3LongName.Location = new System.Drawing.Point(8, 56);
+            this.lblM3LongName.Name = "lblM3LongName";
+            this.lblM3LongName.Size = new System.Drawing.Size(68, 24);
+            this.lblM3LongName.TabIndex = 10;
+            this.lblM3LongName.Text = "长文件名";
+            this.lblM3LongName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnM3Rom
+            // 
+            this.btnM3Rom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnM3Rom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnM3Rom.Location = new System.Drawing.Point(204, 20);
+            this.btnM3Rom.Name = "btnM3Rom";
+            this.btnM3Rom.Size = new System.Drawing.Size(100, 24);
+            this.btnM3Rom.TabIndex = 6;
+            this.btnM3Rom.Text = "对应M3 ROM文件";
+            this.btnM3Rom.Click += new System.EventHandler(this.btnM3Rom_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMessage.Location = new System.Drawing.Point(3, 17);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(178, 172);
+            this.lblMessage.TabIndex = 8;
+            this.lblMessage.Text = "正在写入，请稍等……";
+            // 
+            // grpMessage
+            // 
+            this.grpMessage.Controls.Add(this.lblMessage);
+            this.grpMessage.Location = new System.Drawing.Point(332, 216);
+            this.grpMessage.Name = "grpMessage";
+            this.grpMessage.Size = new System.Drawing.Size(184, 192);
+            this.grpMessage.TabIndex = 8;
+            this.grpMessage.TabStop = false;
+            // 
+            // picName
+            // 
+            this.picName.Image = ((System.Drawing.Image)(resources.GetObject("picName.Image")));
+            this.picName.Location = new System.Drawing.Point(12, 16);
+            this.picName.Name = "picName";
+            this.picName.Size = new System.Drawing.Size(316, 56);
+            this.picName.TabIndex = 9;
+            this.picName.TabStop = false;
+            // 
+            // groupChkBox
+            // 
+            this.groupChkBox.Controls.Add(this.chkPokemon);
+            this.groupChkBox.Location = new System.Drawing.Point(12, 408);
+            this.groupChkBox.Name = "groupChkBox";
+            this.groupChkBox.Size = new System.Drawing.Size(268, 48);
+            this.groupChkBox.TabIndex = 7;
+            this.groupChkBox.TabStop = false;
+            // 
+            // frmMain
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
+            this.ClientSize = new System.Drawing.Size(520, 461);
+            this.Controls.Add(this.grpMessage);
+            this.Controls.Add(this.grpM3);
+            this.Controls.Add(this.grpControl);
+            this.Controls.Add(this.grpOutput);
+            this.Controls.Add(this.grpChangeMode);
+            this.Controls.Add(this.grpTest);
+            this.Controls.Add(this.grpFile);
+            this.Controls.Add(this.grpLanguage);
+            this.Controls.Add(this.picName);
+            this.Controls.Add(this.groupChkBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(536, 500);
+            this.MinimumSize = new System.Drawing.Size(536, 500);
+            this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DS Save Tools";
+            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.grpFile.ResumeLayout(false);
+            this.grpFile.PerformLayout();
+            this.grpTest.ResumeLayout(false);
+            this.grpChangeMode.ResumeLayout(false);
+            this.grpLanguage.ResumeLayout(false);
+            this.grpOutput.ResumeLayout(false);
+            this.grpControl.ResumeLayout(false);
+            this.grpM3.ResumeLayout(false);
+            this.grpM3.PerformLayout();
+            this.grpMessage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picName)).EndInit();
+            this.groupChkBox.ResumeLayout(false);
+            this.ResumeLayout(false);
 
 		}
 		#endregion
@@ -646,7 +644,7 @@ namespace Anter.Win32.JL.DSSaveTools
 
 		#region 变量初始化
 
-		static int NdsCards = 27 + 1;							//支持的NDS烧录卡的数量，“+1”前面的数字和NDS烧录卡最大序号相同
+		static int NdsCards = 28 + 1;							//支持的NDS烧录卡的数量，“+1”前面的数字和NDS烧录卡最大序号相同
 		static int GbaCards =  7 + 1;							//支持的GBA烧录卡的数量，“+1”前面的数字和GBA烧录卡最大序号相同
 		string[][] strLanguageForm = new string[16+1][];		//界面语言，“+1”前面的数字和界面语言最大序号相同
 		string[][] strLanguageMessage = new string[24+1][];		//提示信息语言，“+1”前面的数字和提示信息语言最大序号相同
@@ -832,7 +830,8 @@ namespace Anter.Win32.JL.DSSaveTools
 			SetupCardType[0][24] = new CardType(0,"Super Card DS (ONE)","SCDS","1110110000",4,0,".sav",0,"slot1接口，使用TF卡存储，标准存档格式。");
 			SetupCardType[0][25] = new CardType(0,"SUNNY FLASH","SYFH","0000100000",1,1,".sav",0,"DSGBA OEM产品，slot1+2接口，使用内置存储芯片，标准256K存档格式。");
 			SetupCardType[0][26] = new CardType(0,"(EMU) NO$GBA (Raw)","NO$GBA","0000010000",1,0,".sav",0,"PC用模拟器，使用512K标准存档格式或自有的特有存档格式。");
-			SetupCardType[0][27] = new CardType(0,"Other (All Sizes)","OTHER","1111111000",5,1,".sav",0,"适用于所有的的DS模式标准存档格式的烧录卡。");
+            SetupCardType[0][27] = new CardType(0, "(EMU) DeSmuME", "DeSmuME", "0010010000", 2, 0, ".dsv", 0, "PC用模拟器，DeSmuME 特有存档格式。\n\r\n\r仍然推荐你使用该模拟器的导入功能！");
+            SetupCardType[0][28] = new CardType(0,"Other (All Sizes)","OTHER","1111111000",5,1,".sav",0,"适用于所有的的DS模式标准存档格式的烧录卡。");
 
 			//以下是GBA烧录卡列表
 			SetupCardType[1][0] = new CardType(1,"EZ 3IN1","3IN1","0001000000",1,0,".sav",0,"slot2接口GBA烧录卡，使用内置存储芯片，标准128K存档格式。");
@@ -1154,7 +1153,7 @@ namespace Anter.Win32.JL.DSSaveTools
 
 			string OpenFilter = "";
 			//OpenFilter += "All Save Files(*.sav;*.bak;*.dat;*.0;*.1;*.2;*.dss;*.dst;*.duc)|*.sav;*.bak;*.dat;*.0;*.1;*.2;*.dss;*.dst;*.duc|";
-			OpenFilter += "All Save Files(*.sav;*.bak;*.dat;*.0;*.1;*.2;*.dst;*.duc)|*.sav;*.bak;*.dat;*.0;*.1;*.2;*.dst;*.duc|";
+			OpenFilter += "All Save Files(*.sav;*.bak;*.dat;*.0;*.1;*.2;*.dst;*.dsv;*.duc)|*.sav;*.bak;*.dat;*.0;*.1;*.2;*.dst;*.dsv;*.duc|";
 			OpenFilter += "Save Files(*.sav)|*.sav|";
 			OpenFilter += "R4 & M3DSS Save BackUp Files(*.bak)|*.bak|";
 			OpenFilter += "M3 Save Files(*.dat)|*.dat|";
@@ -1162,7 +1161,8 @@ namespace Anter.Win32.JL.DSSaveTools
 			OpenFilter += "G6 Save Files(*.0;*.1;*.2)|*.0;*.1;*.2|";
 			//OpenFilter += "Action Replay Max DS Save Files(*.dss;*.dst;*.duc)|*.dss;*.dst;*.duc|";
 			OpenFilter += "Action Replay Max DS Save Files(*.dst;*.duc)|*.dst;*.duc|";
-			OpenFilter += "All Files(*.*)|*.*";
+            OpenFilter += "DeSmuME Save Files(*.dsv)|*.dsv|";
+            OpenFilter += "All Files(*.*)|*.*";
 
 			dialogOpenSaveFile.Filter = OpenFilter;
 
@@ -1518,6 +1518,7 @@ namespace Anter.Win32.JL.DSSaveTools
 			}
 			catch
 			{
+                Debug.WriteLine("MainChange error!");
 			}
 			finally
 			{
@@ -1537,38 +1538,49 @@ namespace Anter.Win32.JL.DSSaveTools
 				{
 					ShowMessage(1,2);
 
-					
-					//	写入M3和DSLINK的附加部分
-					//		目标存档为M3格式(CardIs=1)时，附加1K
-					//		目标存档为DSLink格式(CardIs=2)时，附加8K
 
-					if (SelectedCardType.CardIs == 1)
-					{
-						ShowMessage(14,0);
+                    //	写入M3和DSLINK的附加部分
+                    //		目标存档为M3格式(CardIs=1)时，附加1K
+                    //		目标存档为DSLink格式(CardIs=2)时，附加8K
 
-						if(M3Adding(ReadFileName("M3ShortName"),ReadFileName("M3LongName"),sro,SelectedMode,M3Add1M) == 0)
-						{
-							ShowMessage(1,2);
-						}
-						else
-						{
-							ShowMessage(3,3);
-						}
+                    if (SelectedCardType.CardIs == 1)
+                    {
+                        ShowMessage(14, 0);
 
-					}
-					else if (SelectedCardType.CardIs == 2)
-					{
-						ShowMessage(13,0);
+                        if (M3Adding(ReadFileName("M3ShortName"), ReadFileName("M3LongName"), sro, SelectedMode, M3Add1M) == 0)
+                        {
+                            ShowMessage(1, 2);
+                        }
+                        else
+                        {
+                            ShowMessage(3, 3);
+                        }
 
-						if(DSLinkAdding(InputName,sro,InputFileType) == 0)
-						{
-							ShowMessage(1,2);
-						}
-						else
-						{
-							ShowMessage(4,3);
-						}
-					}
+                    }
+                    else if (SelectedCardType.CardIs == 2)
+                    {
+                        ShowMessage(13, 0);
+
+                        if (DSLinkAdding(InputName, sro, InputFileType) == 0)
+                        {
+                            ShowMessage(1, 2);
+                        }
+                        else
+                        {
+                            ShowMessage(4, 3);
+                        }
+                    }
+                    else if (SelectedCardType.CardSName == "DeSmuME")
+                    {
+                        if (DeSmuMEAdding(intCopyLengh, sro, InputFileType) == 0)
+                        {
+                            ShowMessage(1, 2);
+                        }
+                        else
+                        {
+                            ShowMessage(2, 2);
+                        }
+                    }
 				}
 				else
 				{
@@ -1581,9 +1593,11 @@ namespace Anter.Win32.JL.DSSaveTools
 				ShowMessage(16,2);
 				ShowMessageBox(16,"OK");
 			}
-			catch
+			catch (Exception ex)
 			{
-			}
+                Debug.WriteLine("CopyDataStart exception: " + ex.ToString());
+
+            }
 			finally
 			{
 				myAllControl(true);
@@ -1653,9 +1667,10 @@ namespace Anter.Win32.JL.DSSaveTools
 
 				return(0);
 			}
-			catch
+			catch(Exception ex)
 			{
-				return(1);
+                Debug.WriteLine("CopyData exception: " + ex.ToString());
+                return (1);
 			}
 			finally
 			{
@@ -1667,12 +1682,13 @@ namespace Anter.Win32.JL.DSSaveTools
 			///
 			///	判断源文件格式
 			///
-			int intCopyLengh,i;				//源存档体积
+			long intCopyLengh,i;				//源存档体积
 			string InputFileType = "";		//源存档格式
 			string txtNoGba1 = "";			//NO$GBA第一识别字符串
 			string txtNoGba2 = "";			//NO$GBA第二识别字符串
 			string strActionReplay = "";	//Action Replay Max DS识别字符串
-			int intNoGba = 0;				//NO$GBA格式模式区分标记
+            string strDeSmuME = "";         //DeSmuME识别字符串
+            int intNoGba = 0;				//NO$GBA格式模式区分标记
 
 			try
 			{
@@ -1694,75 +1710,97 @@ namespace Anter.Win32.JL.DSSaveTools
 
 				strActionReplay = new string(txtNoGba1.ToCharArray(0,4));
 
+                if ((intCopyLengh - sri.Position - 14) > 0)
+                {
+                    long _pos = sri.Position;
+                    for (long j = 0; j < (intCopyLengh - _pos - 14); j++)
+                    {
+                        if (sri.Position < intCopyLengh)
+                            r.ReadByte();
+                    }
 
-				///	判断源存档格式
-				///		1、NO$GBA格式
-				///			a、"UnCo NO$GBA"	532848byte大小的Uncompressed格式（非压缩格式）
-				///			b、"Com NO$GBA"		Compressed格式（压缩格式）
-				///			c、"UnKnown"		未知格式
-				///		2、Action Replay Max DS模式
-				///			a、"AR DUC"		AR DUC模式
-				///			b、"AR DST"		AR DST模式
-				///		3、DSLink模式
-				///			a、"DSLink EEPROM"	EEPROM模式
-				///			b、"DSLink FLASH"	FLASH模式
-				///		4、"M3"			M3格式
-				///		5、"Normal"		标准格式
-				///		6、"UnKnown"	未知格式
+                    for (int z = 0; z < 12; z++)
+                    {
+                        strDeSmuME += r.ReadChar().ToString();
+                    }
+                }
 
-				if(txtNoGba1 == "NocashGbaBackupMediaSavDataFile" && txtNoGba2 =="SRAM")
-				{
-					if (intCopyLengh == 520*1024+368 && intNoGba == 0)
-					{
-						InputFileType = "UnCo NO$GBA";
-					}
-					else if (intNoGba == 1)	
-					{
-						InputFileType = "Com NO$GBA";
-					}
-					else
-					{
-						InputFileType = "UnKnown";
-					}
-				}
-				else if (strActionReplay == "ARDS")
-				{
-					if (intCopyLengh == 1012 || intCopyLengh == 8692 || intCopyLengh == 66036 || intCopyLengh == 262644)	
-					{
-						InputFileType = "AR DUC";
-					}
-					else
-					{
-						InputFileType = "AR DST";
-					}
-				}
-				else if (intCopyLengh == 520*1024)
-				{
-					if(Test(0,strInputName) == "33333300")
-					{
-						InputFileType = "DSLink EEPROM";
-					}
-					else
-					{
-						InputFileType = "DSLink FLASH";	
-					}
-				}
-				else if ((intCopyLengh == 129*1024) || (intCopyLengh == 257*1024) || (intCopyLengh == 513*1024))	
-				{
-					InputFileType = "M3";
-				}
-				else if ((intCopyLengh == 0.5*1024) || (intCopyLengh == 8*1024) || (intCopyLengh == 64*1024) || (intCopyLengh == 128*1024) || (intCopyLengh == 256*1024) || (intCopyLengh == 512*1024) || (intCopyLengh == 1024*1024))	
-				{
-					InputFileType = "Normal";
-				}
-				else
-				{
-					InputFileType = "UnKnown";
-				}
+                ///	判断源存档格式
+                ///		1、NO$GBA格式
+                ///			a、"UnCo NO$GBA"	532848byte大小的Uncompressed格式（非压缩格式）
+                ///			b、"Com NO$GBA"		Compressed格式（压缩格式）
+                ///			c、"UnKnown"		未知格式
+                ///		2、Action Replay Max DS模式
+                ///			a、"AR DUC"		AR DUC模式
+                ///			b、"AR DST"		AR DST模式
+                ///		3、DSLink模式
+                ///			a、"DSLink EEPROM"	EEPROM模式
+                ///			b、"DSLink FLASH"	FLASH模式
+                ///		4、"M3"			M3格式
+                ///		5、"Normal"		标准格式
+                ///		6、"DeSmuME"	DeSmuME格式
+                ///		7、"UnKnown"	未知格式
+
+                if (txtNoGba1 == "NocashGbaBackupMediaSavDataFile" && txtNoGba2 == "SRAM")
+                {
+                    if (intCopyLengh == 520 * 1024 + 368 && intNoGba == 0)
+                    {
+                        InputFileType = "UnCo NO$GBA";
+                    }
+                    else if (intNoGba == 1)
+                    {
+                        InputFileType = "Com NO$GBA";
+                    }
+                    else
+                    {
+                        InputFileType = "UnKnown";
+                    }
+                }
+                else if (strActionReplay == "ARDS")
+                {
+                    if (intCopyLengh == 1012 || intCopyLengh == 8692 || intCopyLengh == 66036 || intCopyLengh == 262644)
+                    {
+                        InputFileType = "AR DUC";
+                    }
+                    else
+                    {
+                        InputFileType = "AR DST";
+                    }
+                }
+                else if (strDeSmuME.ToUpper() == "DESMUME SAVE")
+                {
+                    InputFileType = "DeSmuME";
+                }
+                else if (intCopyLengh == 520 * 1024)
+                {
+                    if (Test(0, strInputName) == "33333300")
+                    {
+                        InputFileType = "DSLink EEPROM";
+                    }
+                    else
+                    {
+                        InputFileType = "DSLink FLASH";
+                    }
+                }
+                else if ((intCopyLengh == 129 * 1024) || (intCopyLengh == 257 * 1024) || (intCopyLengh == 513 * 1024))
+                {
+                    InputFileType = "M3";
+                }
+                else if ((intCopyLengh == 0.5 * 1024) || (intCopyLengh == 8 * 1024) || (intCopyLengh == 64 * 1024) || (intCopyLengh == 128 * 1024) || (intCopyLengh == 256 * 1024) || (intCopyLengh == 512 * 1024) || (intCopyLengh == 1024 * 1024))
+                {
+                    InputFileType = "Normal";
+                }
+                else
+                {
+                    InputFileType = "UnKnown";
+                }
 
 				sri.Close();
 			}
-			catch{}
+			catch (Exception ex)
+            {
+                Debug.WriteLine("InputFileMode Exception: " + ex.ToString());
+            }
 			finally{}
 
 			return(InputFileType);
@@ -2154,10 +2192,56 @@ namespace Anter.Win32.JL.DSSaveTools
 			}
 		}
 
-		#endregion
+        private int DeSmuMEAdding(int intCopyLength, FileStream sro, string InputMode)    //DeSmuME 附加
+        {
+            try
+            {
+                BinaryWriter w = new BinaryWriter(sro);
 
-		#region 测试程序
-		private void StartTest(string strInputName)
+                byte[] bb;
+
+                switch (intCopyLength)
+                {
+                    case 64 * 1024:
+                        bb = new byte[] { 0x7C, 0x3C, 0x2D, 0x2D, 0x53, 0x6E, 0x69, 0x70, 0x20, 0x61, 0x62, 0x6F, 0x76
+                            , 0x65, 0x20, 0x68, 0x65, 0x72, 0x65, 0x20, 0x74, 0x6F, 0x20, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x20
+                            , 0x61, 0x20, 0x72, 0x61, 0x77, 0x20, 0x73, 0x61, 0x76, 0x20, 0x62, 0x79, 0x20, 0x65, 0x78, 0x63, 0x6C
+                            , 0x75, 0x64, 0x69, 0x6E, 0x67, 0x20, 0x74, 0x68, 0x69, 0x73, 0x20, 0x44, 0x65, 0x53, 0x6D, 0x75, 0x4D
+                            , 0x45, 0x20, 0x73, 0x61, 0x76, 0x65, 0x64, 0x61, 0x74, 0x61, 0x20, 0x66, 0x6F, 0x6F, 0x74, 0x65, 0x72, 0x3A
+                            , 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x03, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00
+                            , 0x7C, 0x2D, 0x44, 0x45, 0x53, 0x4D, 0x55, 0x4D, 0x45, 0x20, 0x53, 0x41, 0x56, 0x45, 0x2D, 0x7C };
+                        break;
+                    default:
+                        bb = new byte[] { 0x7C, 0x3C, 0x2D, 0x2D, 0x53, 0x6E, 0x69, 0x70, 0x20, 0x61, 0x62, 0x6F, 0x76
+                            , 0x65, 0x20, 0x68, 0x65, 0x72, 0x65, 0x20, 0x74, 0x6F, 0x20, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x20
+                            , 0x61, 0x20, 0x72, 0x61, 0x77, 0x20, 0x73, 0x61, 0x76, 0x20, 0x62, 0x79, 0x20, 0x65, 0x78, 0x63, 0x6C
+                            , 0x75, 0x64, 0x69, 0x6E, 0x67, 0x20, 0x74, 0x68, 0x69, 0x73, 0x20, 0x44, 0x65, 0x53, 0x6D, 0x75, 0x4D
+                            , 0x45, 0x20, 0x73, 0x61, 0x76, 0x65, 0x64, 0x61, 0x74, 0x61, 0x20, 0x66, 0x6F, 0x6F, 0x74, 0x65, 0x72, 0x3A
+                            , 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x06, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00
+                            , 0x7C, 0x2D, 0x44, 0x45, 0x53, 0x4D, 0x55, 0x4D, 0x45, 0x20, 0x53, 0x41, 0x56, 0x45, 0x2D, 0x7C };
+                        break;
+                }
+                //for(int i=0;i<)
+                w.Seek(0, SeekOrigin.End);
+                for (int i = 0; i < bb.Length; i++)
+                {
+                    w.Write(bb[i]);
+                }
+                
+                w.Close();
+
+                return (0);
+            }
+            catch
+            {
+                return (1);
+            }
+        }
+
+        #endregion
+
+        #region 测试程序
+        private void StartTest(string strInputName)
 		{
 			string strInputMode = InputFileMode(strInputName);
 			string strNameTemp = "";
@@ -2412,9 +2496,10 @@ namespace Anter.Win32.JL.DSSaveTools
 				sri.Close();
 				sro.Close();
 			}
-			catch
+			catch (Exception ex)
 			{
-			}
+                Debug.WriteLine("DOSCommand Exception: " + ex.ToString());
+            }
 			finally
 			{
 			}

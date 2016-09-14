@@ -1,7 +1,8 @@
+using System.Runtime.InteropServices;
 using System;
 using System.Reflection;
 
-[assembly: AssemblyVersion("1.1.6.14551")]
+[assembly: AssemblyVersion("1.1.8.0")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCopyright("")]
@@ -12,3 +13,6 @@ using System.Reflection;
 [assembly: AssemblyProduct("DS存档转换软件")]
 [assembly: AssemblyTitle("DS存档转换")]
 [assembly: AssemblyTrademark("")]
+[assembly: AssemblyFileVersion("1.1.8.0")]
+[assembly: Guid("81D75630-5A9F-4121-9671-662AD8AA42F4")]
+

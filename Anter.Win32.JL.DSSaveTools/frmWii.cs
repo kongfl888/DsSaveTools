@@ -1,19 +1,13 @@
 using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Data;
 using System.IO;
-using System.Text;
-using System.Runtime.InteropServices;
 
 namespace Anter.Win32.JL.DSSaveTools
 {
-	/// <summary>
-	/// frmWii 的摘要说明。
-	/// </summary>
-	public class frmWii : System.Windows.Forms.Form
+    /// <summary>
+    /// frmWii 的摘要说明。
+    /// </summary>
+    public class frmWii : System.Windows.Forms.Form
 	{
 		private System.Windows.Forms.OpenFileDialog dialogOpenWiiSave;
 		private System.Windows.Forms.TextBox txtOpenSave;
