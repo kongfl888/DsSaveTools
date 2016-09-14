@@ -38,7 +38,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(316, 261);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "基于1.1.6（2009.7.10）版的源代码。\n首先必须感谢 小蚂蚁工作室 的开源付出。\n该版本的源代码你可以到 https://github.com/kong" +
+            this.richTextBox1.Text = "基于1.1.6（2009.7.10）版的源代码。\n首先必须感谢 小蚂蚁工作室 的开源付出。\n本版本的源代码你可以到 https://github.com/kong" +
     "fl888/DsSaveTools 下载。\n\nLicense：GPL3.0";
             // 
             // frmAbout
