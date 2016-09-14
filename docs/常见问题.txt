@@ -1,5 +1,5 @@
 1、为什么这个软件在我的电脑上无法运行？
-答：本软件是使用微软VS2003编写的，所以在Windows XP等操作系统上需要先安装微软.NET Freamwork 1.1运行库才能运行，下载地址是：http://www.microsoft.com/downloads/details.aspx?FamilyID=262d25e3-f589-4842-8157-034d1e7cf3a3&displaylang=zh-cn
+答：需要先安装微软.NET Freamwork 4及以上运行库才能运行。
 
 2、怎么把转换后的存档放进烧录卡里面？
 答：对于不同的烧录卡，把存档放进烧录卡的方式有几种方式：

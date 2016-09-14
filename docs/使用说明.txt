@@ -1,4 +1,4 @@
-NDS烧录卡存档转换件DS Save Tools v1.1.6使用说明
+NDS烧录卡存档转换件 DS Save Tools 使用说明
 
 一、主要功能：
 	1、可以将几乎所有种类的存档转化为其他各种存档格式（支持NDS和GBA存档格式）。
@@ -12,7 +12,7 @@ NDS烧录卡存档转换件DS Save Tools v1.1.6使用说明
 	9、支持命令行方式，可实现批量转换。（高级功能）
 
 二、安装说明：
-	本软件仅有一个exe文件，不需要安装，在windows vista操作系统下可以直接运行，在Windows XP操作系统下需要先安装微软.NET Freamwork 1.1运行库，否则无法运行。此运行库下载地址在：http://www.microsoft.com/downloads/details.aspx?FamilyID=262d25e3-f589-4842-8157-034d1e7cf3a3&displaylang=zh-cn
+	本软件仅有一个exe文件，不需要安装，基于.NET Freamwork 4运行库，缺失则无法运行。
 
 三、简单说明：
 	1、运行软件后，如果不能运行，请参看安装本文第二部分。
@@ -85,5 +85,8 @@ NDS烧录卡存档转换件DS Save Tools v1.1.6使用说明
 	3、本工作室仅对此软件本身进行技术支持，不对烧录卡、模拟器等其它相关内容进行任何支持和帮助，请不要询问无关问题。
 	4、鸣谢（无顺序）：夏雪宜、steve、lyman、felix、★月下雪影★、7upshd、实验小白鼠（yeyezai）、幻之皮卡丘……
 
+----------
 
-小蚂蚁工作室荣誉出品
+~-1.1.6：小蚂蚁工作室
+
+1.1.8-~：kongfl888
