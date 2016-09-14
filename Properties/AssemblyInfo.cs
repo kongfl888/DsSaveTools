@@ -5,7 +5,7 @@ using System.Reflection;
 [assembly: AssemblyVersion("1.1.8.0")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyCopyright("(C)2016 @kongfl888.  (C)2007-2009 @Anter. All rights reserved.")]
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyKeyFile("")]
