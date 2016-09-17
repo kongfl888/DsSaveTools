@@ -89,4 +89,4 @@ NDS烧录卡存档转换件 DS Save Tools 使用说明
 
 ~-1.1.6：小蚂蚁工作室
 
-1.1.8-~：kongfl888
+kmod 1.1.8-~：kongfl888
