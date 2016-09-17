@@ -9,7 +9,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
-namespace Anter.Win32.JL.DSSaveTools
+namespace DSSaveTools
 {
     /// <summary>
     /// Form1 的摘要说明。
@@ -915,7 +915,7 @@ namespace Anter.Win32.JL.DSSaveTools
 
 		private void btnWii_Click(object sender, System.EventArgs e) 
 		{
-			frmWii WiiForm = new frmWii();
+			fWii WiiForm = new fWii();
 			if(WiiForm.ShowDialog(this) == DialogResult.OK) 
 			{
 				//We would apply changes here since the user accepted them

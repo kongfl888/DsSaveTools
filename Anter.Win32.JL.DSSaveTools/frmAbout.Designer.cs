@@ -1,4 +1,4 @@
-﻿namespace Anter.Win32.JL.DSSaveTools
+﻿namespace DSSaveTools
 {
     partial class frmAbout
     {

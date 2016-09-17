@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Anter.Win32.JL.DSSaveTools
+namespace DSSaveTools
 {
     public partial class frmAbout : Form
     {
