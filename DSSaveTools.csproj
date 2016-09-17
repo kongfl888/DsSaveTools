@@ -64,16 +64,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anter.Win32.JL.DSSaveTools\frmAbout.cs">
+    <Compile Include="frm\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Anter.Win32.JL.DSSaveTools\frmAbout.Designer.cs">
+    <Compile Include="frm\frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="Anter.Win32.JL.DSSaveTools\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fWii.cs">
+    <Compile Include="frm\fWii.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,13 +87,13 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Anter.Win32.JL.DSSaveTools\frmAbout.resx">
+    <EmbeddedResource Include="frm\frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anter.Win32.JL.DSSaveTools\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fWii.resx">
+    <EmbeddedResource Include="frm\fWii.resx">
       <DependentUpon>fWii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
