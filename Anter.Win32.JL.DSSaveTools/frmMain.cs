@@ -559,7 +559,7 @@ namespace DSSaveTools
             // 
             // picName
             // 
-            this.picName.Image = ((System.Drawing.Image)(resources.GetObject("picName.Image")));
+            this.picName.Image = global::DSSaveTools.Properties.Resources.logo;
             this.picName.Location = new System.Drawing.Point(12, 16);
             this.picName.Name = "picName";
             this.picName.Size = new System.Drawing.Size(316, 56);
@@ -595,7 +595,7 @@ namespace DSSaveTools
             this.MinimumSize = new System.Drawing.Size(536, 500);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DS Save Tools";
+            this.Text = "DS Save Tools (kmod)";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.grpFile.ResumeLayout(false);
             this.grpFile.PerformLayout();

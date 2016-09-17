@@ -12,7 +12,7 @@ namespace DSSaveTools
 
         private void frmAbout_Load(object sender, EventArgs e)
         {
-            this.Text += " " + Application.ProductVersion;
+            this.Text = "kmod " + this.Text + " " + Application.ProductVersion;
         }
     }
 }
