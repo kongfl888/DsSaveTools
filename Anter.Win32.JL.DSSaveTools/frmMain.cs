@@ -830,8 +830,8 @@ namespace DSSaveTools
 			SetupCardType[0][24] = new CardType(0,"Super Card DS (ONE)","SCDS","1110110000",4,0,".sav",0,"slot1接口，使用TF卡存储，标准存档格式。");
 			SetupCardType[0][25] = new CardType(0,"SUNNY FLASH","SYFH","0000100000",1,1,".sav",0,"DSGBA OEM产品，slot1+2接口，使用内置存储芯片，标准256K存档格式。");
 			SetupCardType[0][26] = new CardType(0,"(EMU) NO$GBA (Raw)","NO$GBA","0000010000",1,0,".sav",0,"PC用模拟器，使用512K标准存档格式或自有的特有存档格式。");
-            SetupCardType[0][27] = new CardType(0, "(EMU) DeSmuME", "DeSmuME", "0010010000", 2, 0, ".dsv", 0, "PC用模拟器，DeSmuME 特有存档格式。\n\r\n\r仍然推荐你使用该模拟器的导入功能！");
-            SetupCardType[0][28] = new CardType(0,"Other (All Sizes)","OTHER","1111111000",5,1,".sav",0,"适用于所有的的DS模式标准存档格式的烧录卡。");
+			SetupCardType[0][27] = new CardType(0, "(EMU) DeSmuME", "DeSmuME", "1111110000", 6, 0, ".dsv", 0, "PC用模拟器，DeSmuME 特有存档格式。\n\r请根据原有dsv存档类型或大小选择。\n\r\n\r仍然推荐你使用该模拟器的导入功能！");
+			SetupCardType[0][28] = new CardType(0,"Other (All Sizes)","OTHER","1111111000",5,1,".sav",0,"适用于所有的的DS模式标准存档格式的烧录卡。");
 
 			//以下是GBA烧录卡列表
 			SetupCardType[1][0] = new CardType(1,"EZ 3IN1","3IN1","0001000000",1,0,".sav",0,"slot2接口GBA烧录卡，使用内置存储芯片，标准128K存档格式。");
