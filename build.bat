@@ -1,14 +1,19 @@
 @ECHO OFF
 title Release...
 
-call "%VS140COMNTOOLS%vsvars32.bat"
+cd "%~dp0"
+SET "WORK_DIR=%~dp0"
 
-MSBuild.exe DSSaveTools.sln /nologo /m /t:Rebuild /property:Configuration=Release
+SET "MYVSCOMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\Tools\"
 
-call OkRelease.bat
+call "%MYVSCOMNTOOLS%VsDevCmd.bat"
+
+MSBuild.exe %WORK_DIR%DSSaveTools.sln /nologo /m /t:Rebuild /property:Configuration=Release
+
+call %WORK_DIR%OkRelease.bat
 title OkRelease
 
-MSBuild.exe DSSaveTools.sln /nologo /m /t:Clean /property:Configuration=Release
+MSBuild.exe %WORK_DIR%DSSaveTools.sln /nologo /m /t:Clean /property:Configuration=Release
 
 rem explorer OkRelease
 exit /b
